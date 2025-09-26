@@ -1,0 +1,79 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+    id "com.google.gms.google-services" // keep google services plugin here
+}
+
+android {
+    namespace = "com.example.glowzel"
+    compileSdk = 36
+
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    defaultConfig {
+        applicationId = "com.example.glowzel"
+        minSdk = 33
+        targetSdk = 33
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+        multiDexEnabled true
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("C:/Users/COMPUTER WORLD/.android/debug.keystore")
+            storePassword "Umer1122"
+            keyAlias "androiddebugkey"
+            keyPassword "Umer1122"
+        }
+        release {
+            storeFile file("C:/Users/COMPUTER WORLD/.android/debug.keystore")
+            storePassword "Umer1122"
+            keyAlias "androiddebugkey"
+            keyPassword "Umer1122"
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+            minifyEnabled false
+            shrinkResources false
+        }
+    }
+}
+
+dependencies {
+    // ✅ Firebase BoM to align versions
+    implementation platform('com.google.firebase:firebase-bom:33.4.0')
+
+    // Add Firebase services you use (plugins may also pull them in)
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-messaging'
+
+    // Other dependencies
+    implementation 'com.google.code.gson:gson:2.11.0'
+    implementation 'com.google.guava:guava:33.3.1-android'
+    implementation 'com.google.android.gms:play-services-auth:21.4.0'
+    implementation 'com.google.android.material:material:1.13.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+}
+
+// ✅ Prevent old firebase-iid conflict
+configurations.all {
+    exclude group: 'com.google.firebase', module: 'firebase-iid'
+}
+
+flutter {
+    source = "../.."
+}

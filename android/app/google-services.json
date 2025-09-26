@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1084736030231",
+    "project_id": "glowzel-5e114",
+    "storage_bucket": "glowzel-5e114.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084736030231:android:5bbd87fa89e2a1f7e1be52",
+        "android_client_info": {
+          "package_name": "com.example.glowzel"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkocBOKOI-vh0PosJdlOzQRHxlainD5VI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
