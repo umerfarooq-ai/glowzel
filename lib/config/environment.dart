@@ -51,7 +51,7 @@ class DevEnvironment extends Environment {
   DevEnvironment()
       : super(
           name: 'Dev',
-          baseUrl: 'http://192.168.100.56:8000',
+          baseUrl: 'http://192.168.18.38:8000',
           resourceUrl: 'http://192.168.18.9:8005',
         );
 }
